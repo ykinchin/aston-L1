@@ -2,4 +2,4 @@ function f(str) {
 	console.log(str)
 }
 
-f('Hello world!')
+f('New text')
