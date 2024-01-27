@@ -11,6 +11,30 @@
 //      -Лучше подходит для поддержки приложений в реальном времени и стриминга данных
 //      -QUIC позволяет управлять пакетами более эффективно, что может быть особенно полезным в условиях сетей с потерями пакетов
 
+//   3) string: let str1 = 'some text'
+//              let str2 = new String('some text')
+//              let str3 = `${33}`
+
+//      number: let num1 = 62
+//              let num2 = new Number(62)
+//              let num3 = +'1'
+
+//      boolean:let bool1 = true
+//              let bool2 = 10>5
+//              let bool3 = new Boolean(true)
+
+//      null:   let myNull1 = null
+//              let myNull2 = typeof null
+
+//      undefined: let myUndefined1 = undefined
+//              let myUndefined2
+
+//      Symbol: let mySymbol1 = Symbol('symbol')
+//              let mySymbol2 = Symbol.for('global')
+
+//      BigInt: let bigNum1 = 9007199254740991n
+//              let bigNum2 = BigInt("12345678901234567890")
+
 const res = 'B' + 'a' + (1 - 'hello')
 console.log(res) // "BaNaN" - в скобках получается NaN из-за того, что мы отнимаем от числа строку и далее происходид конкатенация
 
