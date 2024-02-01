@@ -1,26 +1,76 @@
-// 1)   1.let counter = {}
+// 1)
+let counter1 = {}
 
-//      2.let counter = new Object()
+let counter2 = new Object()
 
-//      3.let counter = Object.create(null)
+let counter3 = Object.create(null)
 
-//      4.function Counter() {}
-//        let counter = new Counter();
+function Counter() {}
+let counter4 = new Counter()
 
-//      5.let counter = Object.assign({}, {})
+let counter5 = Object.assign({}, {})
 
-//      6.class Counter {}
-//        let counter = new Counter()
+class Counter {}
+let counter6 = new Counter()
 
-// 2)   1.let counterCopy = Object.assign({}, counter)
+// 2)
+let counterCopy1 = Object.assign({}, counter)
 
-//      2.let counterCopy = {};
-//        for (let key in counter) {
-//          if (counter.hasOwnProperty(key)) {
-//              counterCopy[key] = counter[key];
-//              }
-//          }
+let counterCopy2 = {}
+for (let key in counter) {
+	if (counter.hasOwnProperty(key)) {
+		counterCopy[key] = counter[key]
+	}
+}
 
-//      3.let counterCopy = { ...counter }
+let counterCopy3 = { ...counter }
 
-//      4.let counterCopy = JSON.parse(JSON.stringify(counter))
+let counterCopy4 = JSON.parse(JSON.stringify(counter))
+
+// 3)
+function makeCount1() {} // function declaration
+
+let makeCount2 = function () {} // function expression
+
+let makeCount3 = () => {} // arrow function
+
+const counter = { makeCounter4: function () {} } // object method
+
+// (function(){})()  // IIFE
+
+const makeCounter6 = function counterFunc() {} // NFE
+
+// 4)
+const obj1 = { here: { is: 'on', other: '3' }, object: 'Y' }
+
+const obj2 = { here: { is: 'on', other: '2' }, object: 'Y' }
+
+const deepEqual = (obj1, obj2) => {
+	if (obj1 === obj2) {
+		return true
+	}
+
+	if (
+		typeof obj1 !== 'object' ||
+		obj1 === null ||
+		typeof obj2 !== 'object' ||
+		obj2 === null
+	) {
+		return false
+	}
+
+	const keys1 = Object.keys(obj1)
+	const keys2 = Object.keys(obj2)
+
+	if (keys1.length !== keys2.length) {
+		return false
+	}
+
+	for (let key of keys1) {
+		if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
+			return false
+		}
+	}
+
+	return true
+}
