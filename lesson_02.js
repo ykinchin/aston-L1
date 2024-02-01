@@ -74,3 +74,12 @@ const deepEqual = (obj1, obj2) => {
 
 	return true
 }
+
+// 5)
+function reverseStr1(str) {
+	return str.split('').reverse().join('')
+}
+
+function reverseStr2(str) {
+	return str.split('').reduce((reversed, char) => char + reversed, '')
+}
