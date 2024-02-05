@@ -19,3 +19,16 @@ const boundLogger = logger.bind(obj)
 boundLogger()
 logger.call(obj)
 logger.apply(obj)
+
+// 3)
+const arr = [1, 2, 3, 4, 5]
+const sum = arr.reduce((acc, curr) => acc + curr, 0)
+console.log(sum) // 15
+
+const strings = ['i', 'am', 'an', 'array', 'of', 'strings']
+const commonString = strings.join(' ')
+console.log(commonString)
+
+const numbers = [4, 6, 2, 9, 11, 44, 98, 3]
+const max = Math.max(...numbers)
+const min = Math.min(...numbers)
