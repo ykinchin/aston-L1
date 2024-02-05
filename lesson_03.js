@@ -27,8 +27,9 @@ console.log(sum) // 15
 
 const strings = ['i', 'am', 'an', 'array', 'of', 'strings']
 const commonString = strings.join(' ')
-console.log(commonString)
+console.log(commonString) // 'i am an array of strings'
 
 const numbers = [4, 6, 2, 9, 11, 44, 98, 3]
 const max = Math.max(...numbers)
 const min = Math.min(...numbers)
+console.log(max, min) //98 2
