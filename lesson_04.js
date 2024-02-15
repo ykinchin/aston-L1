@@ -36,3 +36,72 @@
 //      Оператор запятая  (,)
 //      Унарные операторы  (delete,typeof,void)
 //      Операторы отношения  (in,instanceof)
+
+// 3)
+function Person(name) {
+	this.name = name
+}
+
+Person.prototype.greet = function () {
+	console.log(`Hello, my name is ${this.name}!`)
+}
+
+const person1 = new Person('Kate')
+function Person2(name) {
+	Person.call(this, name)
+}
+Person2.prototype = Object.create(Person.prototype)
+Person2.prototype.constructor = Person2
+
+Object.prototype.logInfo = function () {
+	console.log(`Logging info for object:`, this)
+}
+
+const person2 = new Person2('Bob')
+
+//
+class Person {
+	constructor(name, age) {
+		this.name = name
+		this.age = age
+	}
+
+	greet() {
+		console.log(`Hello, my name is ${this.name}!`)
+	}
+}
+
+class Person2 extends Person {
+	constructor(name) {
+		super(name)
+	}
+}
+
+Object.prototype.logInfo = function () {
+	console.log(`Logging info for object:`, this)
+}
+
+const person3 = new Person('Alice')
+const person4 = new Person2('Mark')
+
+// 4)
+class Person {
+	constructor(name) {
+		this._name = name
+	}
+
+	get name() {
+		return this._name
+	}
+
+	set name(newName) {
+		this._name = newName
+	}
+}
+
+class PersonThree extends Person {
+	constructor(name, age) {
+		super(name)
+		this.age = age
+	}
+}
